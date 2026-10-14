@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AtlasBag
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f75a78d5bdffd6a448b45904ed288521, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - bbe0a31100e698e448cb708ee2b6823f: 21300000
+    - 640e3fe19f88fdd47a027cfcbe421d7d: 21300000
+    - 01d219554615fbf4e9aca71ecfd5fda0: 21300000
+    - 78f950c515e1a8442961280c0b565c8f: 21300000
+    - 6389664877a5995408bd68a0b5c771c6: 21300000
+    - 1a90c65a51600554faddb9042ab78210: 21300000
+    - 7a213faa00db2cc48ba81132088e7527: 21300000
+    - d0720a3b00005b94b9a3c66578f9265e: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: bbe0a31100e698e448cb708ee2b6823f, type: 3}
+  - {fileID: 21300000, guid: 640e3fe19f88fdd47a027cfcbe421d7d, type: 3}
+  - {fileID: 21300000, guid: 01d219554615fbf4e9aca71ecfd5fda0, type: 3}
+  - {fileID: 21300000, guid: 78f950c515e1a8442961280c0b565c8f, type: 3}
+  - {fileID: 21300000, guid: 6389664877a5995408bd68a0b5c771c6, type: 3}
+  - {fileID: 21300000, guid: 1a90c65a51600554faddb9042ab78210, type: 3}
+  - {fileID: 21300000, guid: 7a213faa00db2cc48ba81132088e7527, type: 3}
+  - {fileID: 21300000, guid: d0720a3b00005b94b9a3c66578f9265e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - mmc
+  - backpack
+  - mt
+  - mbh
+  - jxr
+  - mgt
+  - mbd
+  - dmb
+  m_RenderDataMap: {}
+  m_Tag: AtlasBag
+  m_IsVariant: 0
