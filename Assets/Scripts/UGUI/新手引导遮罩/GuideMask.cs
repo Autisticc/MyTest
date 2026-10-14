@@ -63,22 +63,25 @@ public class GuideMask : MaskableGraphic, ICanvasRaycastFilter
         // var inLb = new Vector2(_targetMin.x, _targetMin.y);
         // var inRb = new Vector2(_targetMax.x, _targetMin.y);
 
-        // 上、下、左、右四个矩形，围出中间镂空的高亮区，AddQuad画矩形的方法
-        AddQuad(toFill, outLt, outRt, inRt, inLt);
-        AddQuad(toFill, outLb, outRb, inRb, inLb);
-        AddQuad(toFill, outLt, inLt, inLb, outLb);
-        AddQuad(toFill, inRt, outRt, outRb, inRb);
-    }
+        // 外矩形 4 角 + 内镂空矩形 4 角，共 8 个顶点（顶点复用，性能最优）
+        toFill.AddVert(outLb, color, Vector2.zero);   // 0 外左下
+        toFill.AddVert(inLb,  color, Vector2.zero);   // 1 内左下
+        toFill.AddVert(inRb,  color, Vector2.zero);   // 2 内右下
+        toFill.AddVert(outRb, color, Vector2.zero);   // 3 外右下
+        toFill.AddVert(inRt,  color, Vector2.zero);   // 4 内右上
+        toFill.AddVert(outRt, color, Vector2.zero);   // 5 外右上
+        toFill.AddVert(inLt,  color, Vector2.zero);   // 6 内左上
+        toFill.AddVert(outLt, color, Vector2.zero);   // 7 外左上
 
-    private void AddQuad(VertexHelper toFill, Vector2 a, Vector2 b, Vector2 c, Vector2 d)
-    {
-        var index = toFill.currentVertCount;
-        toFill.AddVert(a, color, Vector2.zero);
-        toFill.AddVert(b, color, Vector2.zero);
-        toFill.AddVert(c, color, Vector2.zero);
-        toFill.AddVert(d, color, Vector2.zero);
-        toFill.AddTriangle(index, index + 1, index + 2);
-        toFill.AddTriangle(index, index + 2, index + 3);
+        // 下、右、上、左四个方向各 2 个三角形，围出中间镂空的高亮区
+        toFill.AddTriangle(0, 1, 2);   // 下区
+        toFill.AddTriangle(2, 3, 0);
+        toFill.AddTriangle(3, 2, 4);   // 右区
+        toFill.AddTriangle(4, 5, 3);
+        toFill.AddTriangle(6, 7, 5);   // 上区
+        toFill.AddTriangle(5, 4, 6);
+        toFill.AddTriangle(7, 6, 1);   // 左区
+        toFill.AddTriangle(1, 0, 7);
     }
 
     private void LateUpdate()
